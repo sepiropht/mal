@@ -17,7 +17,6 @@ mal: stepA_mal
 	cargo build --release --bin $*
 	cp target/release/$* $@
 
-STEP0_DEPS = readline.rs
 STEP1_DEPS = $(STEP0_DEPS) types.rs reader.rs printer.rs
 STEP3_DEPS = $(STEP1_DEPS) env.rs
 STEP4_DEPS = $(STEP3_DEPS) core.rs
