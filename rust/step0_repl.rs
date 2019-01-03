@@ -2,18 +2,18 @@ use std::io;
 
 fn main() {
     loop {
-    println!("user>");
-    let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("something went wrong");
+        println!("user>");
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect(
+            "something went wrong",
+        );
 
-    repl(input);
+        repl(input);
     }
 }
 
 fn read(input: String) -> String {
-        input
+    input
 }
 
 fn eval(token: &str) -> &str {
@@ -25,7 +25,7 @@ fn print(token: &str) -> &str {
 }
 
 fn repl(input: String) {
-        let read = read(input);
-        let eval = eval(&read);
-        print(eval);
+    let read = read(input);
+    let eval = eval(&read);
+    print(eval);
 }
